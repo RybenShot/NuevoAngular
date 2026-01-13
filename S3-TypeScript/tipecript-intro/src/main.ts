@@ -1,6 +1,6 @@
 import './style.css'
 import './topics/01-basic-types'
-import './topics/02-objects-interrface.ts'
+import './topics/03-functions.ts'
 
 import typescriptLogo from './typescript.svg'
 import viteLogo from '/vite.svg'
