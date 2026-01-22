@@ -1,9 +1,24 @@
-<h1>Este es el hero</h1>
+<h1>{{ name() }}</h1>
 
-<button (click)="getHeroDescription()" class="btn-green">Chivar heroe</button>
+<dl>
+  <td>Nombre:</td>
+  <dd>{{ name() }}</dd>
 
-<button (click)="changeHero()">Cambiar Heroe</button>
+  <td>Edad:</td>
+  <dd>{{ age() }}</dd>
 
-<button (click)="ressetForm()">Resetear Heroe</button>
+  <td>Método:</td>
+  <dd>{{ heroDescription() }}</dd>
 
-<button (click)="changeAge(60)">Resetear Heroe</button>
+  <td>Capitalizado:</td>
+  <dd>{{capitalizeName()}}</dd>
+   <dd>{{name() | uppercase}}</dd>
+</dl>
+
+<button (click)="changeHero()" class="btn btn-primary mx-2">
+  Cambiar nombre
+</button>
+
+<button class="btn btn-primary" (click)="changeAge(60)">Cambiar edad</button>
+
+<button (click)="ressetForm()" class="btn btn-primary mx-2">Reset</button>
