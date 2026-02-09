@@ -1,31 +1,34 @@
-import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from "@angular/router";
+import { Component, inject } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { GifService } from '../../services/gifs.service';
 
 interface MenuOption {
-  label: string;
-  sublabel: string;
-  route: string;
   icon: string;
+  label: string;
+  route: string;
+  subLabel: string;
 }
 
 @Component({
   selector: 'gift-side-menu-options',
   imports: [RouterLink, RouterLinkActive],
-  templateUrl: './gift-side-menu-options.html'
+  templateUrl: './gift-side-menu-options.html',
 })
-export default class SideMenuOptionsComponent {
+export class SideMenuOptionsComponent {
+  gifService = inject(GifService);
+
   menuOptions: MenuOption[] = [
     {
+      icon: 'fa-solid fa-chart-line',
       label: 'Trending',
-      sublabel: 'Gifs Populares',
+      subLabel: 'Gifs Populares',
       route: '/dashboard/trending',
-      icon: 'fa-solid fa-chart-line'
     },
     {
+      icon: 'fa-solid fa-magnifying-glass',
       label: 'Buscador',
-      sublabel: 'Buscar Gifs',
+      subLabel: 'Buscar gifs',
       route: '/dashboard/search',
-      icon: 'fa-solid fa-magnifying-glass'
-    }
-  ]
+    },
+  ];
 }
